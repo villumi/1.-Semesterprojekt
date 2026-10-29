@@ -5,20 +5,37 @@ class World {
   Space entry;
   
   public World () {
-    Space entry    = new Space("Entry");
-    Space corridor = new Space("Corridor");
-    Space cave     = new Space("Cave");
-    Space pit      = new Space("Darkest Pit");
-    Space outside  = new Space("Outside");
+    Space room    = new Space("Room");
+    Space home = new Space("Home");
+    Space garden = new Space("Garden");
+    Space garage = new Space("Garage");
+    Space driveway     = new Space("Driveway");
+    Space workplace      = new Space("Workplace");
+    Space supermarket  = new Space("Supermarket");
+    Space shopping  = new Space("Shopping");
+
+    room.AddEdge("home", home);
+    home.AddEdge("room", room);
+    home.AddEdge("driveway", driveway);
+    home.AddEdge("garden", garden);
+    home.AddEdge("garage", garage);
+    garden.AddEdge("home", home);
+    garage.AddEdge("home", home);
+    garage.AddEdge("driveway", driveway);
+    driveway.AddEdge("home", home);
+    driveway.AddEdge("garage", garage);
+    driveway.AddEdge("workplace", workplace);
+    driveway.AddEdge("supermarket", supermarket);
+    driveway.AddEdge("shopping", shopping);
+    workplace.AddEdge("driveway", driveway);
+    workplace.AddEdge("shopping", shopping);
+    workplace.AddEdge("supermarket", supermarket);
+    shopping.AddEdge("driveway", driveway);
+    shopping.AddEdge("supermarket", supermarket);
+    supermarket.AddEdge("driveway", driveway);
+    supermarket.AddEdge("shopping", shopping);
     
-    entry.AddEdge("door", corridor);
-    corridor.AddEdge("door", cave);
-    cave.AddEdge("north", pit);
-    cave.AddEdge("south", outside);
-    pit.AddEdge("door", cave);
-    outside.AddEdge("door", cave);
-    
-    this.entry = entry;
+    this.entry = home;
   }
   
   public Space GetEntry () {

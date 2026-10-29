@@ -29,9 +29,13 @@ class Game {
         case "go":
           if (parameters.Length!=1) {
             Console.WriteLine("I don't seem to know where that is 🤔");
-            return;
+            break; //Changed a return to a break (return closed the game)
           }
-          context.Transition(parameters[0]);
+          try {
+            context.Transition(parameters[0]);
+          } catch (KeyNotFoundException) {
+            Console.WriteLine("Der kan du ikke gå hen.");
+          }
           break;
         case "help":
           Console.WriteLine(" - exit  Exit the program");
