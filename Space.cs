@@ -2,6 +2,9 @@
  */
 
 class Space : Node {
+
+  //Initiallizes the haveVisted variable for the space class
+  public bool haveVisited = false;
   public Space (String name) : base(name)
   {
   }

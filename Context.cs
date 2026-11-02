@@ -14,6 +14,8 @@ class Context {
   }
   
   public void Transition (string direction) {
+    //Sets the value of haveVisited to true before we transition to the next room
+    current.haveVisited = true;
     Space next = current.FollowEdge(direction);
     if (next==null) {
       Console.WriteLine("You are confused, and walk in a circle looking for '"+direction+"'. In the end you give up 😩");
@@ -21,6 +23,13 @@ class Context {
       current.Goodbye();
       current = next;
       current.Welcome();
+      //Prints haveVisited value for debugging can be deleted
+      Console.WriteLine("haveVisited for : " + GetCurrent().GetName() + " is: " + GetCurrent().haveVisited);
+      //Checks if the current room has been visited and prints a message if it has
+      if (GetCurrent().haveVisited == true)
+      {
+        Console.WriteLine("This room has been visited there is nothing left to see");
+      }
     }
   }
   
