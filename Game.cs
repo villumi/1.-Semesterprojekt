@@ -60,19 +60,19 @@ class Game {
                 break;
             }
             Item? chosen = null; //variable to hold players chosen item
-            foreach(Item item in context.GetCurrent().items) { //loops through all items in the current space and assigns an item if it matches with the given parameter
+            foreach(Item item in context.GetCurrent().items) { //loops through all items in the current space and assigns an item if it matches the given parameter
                 if (item.Name == parameters[0]) {
                     chosen = item;
                 }
             }
             if (chosen != null){
                 context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
-                Console.WriteLine("you chose"+parameters[0]);
+                Console.WriteLine("you chose "+parameters[0]);
                 //Can add WriteLine here with information on choice, based on chosen. 
                 context.GetCurrent().haveCompleted=true; //include in complete() method?
                 context.GetCurrent().Complete(); 
                 break;
-            } else Console.WriteLine("You cannot choose this");
+            } else Console.WriteLine("You cannot choose "+parameters[0]);
             break;
         default:
           Console.WriteLine("Woopsie, I don't understand '"+command+"' 😕");

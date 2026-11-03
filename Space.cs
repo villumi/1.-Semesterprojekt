@@ -19,6 +19,10 @@ class Space : Node {
         {
             Console.WriteLine("- " + roomMessage);
             Console.WriteLine();
+            //prints all options/items in a given room
+            foreach (Item option in items) {
+                Console.WriteLine(" - "+option.Name);
+            }
             haveVisited = true;
         } else {
             Console.WriteLine("- This room has been visited there is nothing left to see");

@@ -9,7 +9,7 @@ class World {
     Space home = new Space("Home", "Something 1");
     Space garden = new Space("Garden");
     Space garage = new Space("Garage");
-    Space driveway     = new Space("Driveway", "Something 2");
+    Space driveway     = new Space("Driveway", "Choose method of transport:");
     Space workplace      = new Space("Workplace");
     Space supermarket  = new Space("Supermarket");
     Space shopping  = new Space("Shopping");
@@ -36,6 +36,18 @@ class World {
     supermarket.AddEdge("shopping", shopping);
     
     this.entry = home;
+
+    //creating items
+    Item car = new Item("car",5000);
+    Item bicycle = new Item("bicycle", -5000);
+    Item bus = new Item("bus",-100);
+    
+    //adding items to spaces
+    driveway.AddItem(car);
+    driveway.AddItem(bicycle);
+    driveway.AddItem(bus);
+    
+    
   }
   
   public Space GetEntry () {
