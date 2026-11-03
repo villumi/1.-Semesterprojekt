@@ -32,6 +32,7 @@ class Space : Node {
     }
     
     public void Complete () {
+        this.haveCompleted = true;
         HashSet<string> exits = edges.Keys.ToHashSet();
         Console.WriteLine("Current exits are:");
         foreach (String exit in exits) {

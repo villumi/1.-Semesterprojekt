@@ -50,7 +50,6 @@ class Game {
           break;
         case "complete": //remove, made to check functionality of completing player choice. 
           Console.WriteLine("Auto completed room");
-          context.GetCurrent().haveCompleted=true; //include in complete() method?
           context.GetCurrent().Complete(); 
           break;
         case "choose":
@@ -69,7 +68,6 @@ class Game {
                 context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
                 //Can add WriteLine here with information on choice, based on chosen. 
-                context.GetCurrent().haveCompleted=true; //include in complete() method?
                 context.GetCurrent().Complete(); 
                 break;
             } else Console.WriteLine("You cannot choose "+parameters[0]);
