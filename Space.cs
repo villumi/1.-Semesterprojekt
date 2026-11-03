@@ -5,13 +5,24 @@ class Space : Node {
 
   //Initiallizes the haveVisted variable for the space class
   public bool haveVisited = false;
-  public Space (String name) : base(name)
+  private string roomMessage;
+  public Space (String name, string roomMessage = "") : base(name)
   {
+      this.roomMessage = roomMessage;
   }
   
   public void Welcome () {
-    //Console.Clear();
+    Console.Clear();
     Console.WriteLine("You are now at "+name);
+    if (!haveVisited)
+    {
+        Console.WriteLine(roomMessage);
+        Console.WriteLine();
+        haveVisited = true;
+    } else {
+        Console.WriteLine("This room has been visited there is nothing left to see");
+        Console.WriteLine();
+    }
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("Current exits are:");
     foreach (String exit in exits) {
