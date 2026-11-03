@@ -27,14 +27,18 @@ class Game {
           context.MakeDone();
           break;
         case "go":
-          if (parameters.Length!=1) {
-            Console.WriteLine("I don't seem to know where that is 🤔");
-            break; //Changed a return to a break (return closed the game)
-          }
-          try {
-            context.Transition(parameters[0]);
-          } catch (KeyNotFoundException) {
-            Console.WriteLine("Der kan du ikke gå hen.");
+          if (context.GetCurrent().haveCompleted) {
+            if (parameters.Length!=1) {
+                Console.WriteLine("I don't seem to know where that is 🤔");
+                break; //Changed a return to a break (return closed the game)
+            }
+            try {
+                context.Transition(parameters[0]);
+            } catch (KeyNotFoundException) {
+                Console.WriteLine("You cannot enter there.");
+            }
+          } else {
+            Console.WriteLine("You haven't completed the room yet");
           }
           break;
         case "help":
@@ -43,6 +47,11 @@ class Game {
           Console.WriteLine(" - bye   Exit the program");
           Console.WriteLine(" - go    Follow an exit");
           Console.WriteLine(" - help  Display a help message");
+          break;
+        case "complete":
+          Console.WriteLine("Auto completed room");
+          context.GetCurrent().haveCompleted=true;
+          context.GetCurrent().Complete();
           break;
         default:
           Console.WriteLine("Woopsie, I don't understand '"+command+"' 😕");

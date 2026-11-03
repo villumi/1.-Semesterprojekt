@@ -5,11 +5,11 @@ class World {
   Space entry;
   
   public World () {
-    Space room    = new Space("Room", "Der er en nøgle");
-    Space home = new Space("Home");
+    Space room    = new Space("Room", "Der er en nøgle, du kan samle den op ved at skrive 'interact'");
+    Space home = new Space("Home", "Something 1");
     Space garden = new Space("Garden");
     Space garage = new Space("Garage");
-    Space driveway     = new Space("Driveway");
+    Space driveway     = new Space("Driveway", "Something 2");
     Space workplace      = new Space("Workplace");
     Space supermarket  = new Space("Supermarket");
     Space shopping  = new Space("Shopping");

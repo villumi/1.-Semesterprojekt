@@ -3,37 +3,41 @@
 
 class Space : Node {
 
-  //Initiallizes the haveVisted variable for the space class
-  public bool haveVisited = false;
-  private string roomMessage;
-  public Space (String name, string roomMessage = "") : base(name)
-  {
-      this.roomMessage = roomMessage;
-  }
-  
-  public void Welcome () {
-    Console.Clear();
-    Console.WriteLine("You are now at "+name);
-    if (!haveVisited)
+    //Initiallizes the haveVisted variable for the space class
+    public bool haveVisited = false;
+    public bool haveCompleted = false;
+    private string roomMessage;
+    public Space (String name, string roomMessage = "") : base(name)
     {
-        Console.WriteLine(roomMessage);
-        Console.WriteLine();
-        haveVisited = true;
-    } else {
-        Console.WriteLine("This room has been visited there is nothing left to see");
-        Console.WriteLine();
+        this.roomMessage = roomMessage;
     }
-    HashSet<string> exits = edges.Keys.ToHashSet();
-    Console.WriteLine("Current exits are:");
-    foreach (String exit in exits) {
-      Console.WriteLine(" - "+exit);
+    
+    public void Welcome () {
+        Console.WriteLine("You are now at "+name);
+        if (!haveVisited)
+        {
+            Console.WriteLine("- " + roomMessage);
+            Console.WriteLine();
+            haveVisited = true;
+        } else {
+            Console.WriteLine("- This room has been visited there is nothing left to see");
+            Console.WriteLine();
+            this.Complete();
+            }
     }
-  }
-  
-  public void Goodbye () {
-  }
-  
-  public override Space FollowEdge (string direction) {
-    return (Space) (base.FollowEdge(direction));
-  }
+    
+    public void Complete () {
+        HashSet<string> exits = edges.Keys.ToHashSet();
+        Console.WriteLine("Current exits are:");
+        foreach (String exit in exits) {
+        Console.WriteLine(" - "+exit);
+        }
+    }
+    
+    public void Goodbye () {
+    }
+    
+    public override Space FollowEdge (string direction) {
+        return (Space) (base.FollowEdge(direction));
+    }
 }

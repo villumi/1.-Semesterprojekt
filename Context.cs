@@ -18,6 +18,7 @@ class Context {
     if (next==null) {
       Console.WriteLine("You are confused, and walk in a circle looking for '"+direction+"'. In the end you give up 😩");
     } else {
+      Console.Clear();
       current.Goodbye();
       current = next;
       current.Welcome();
