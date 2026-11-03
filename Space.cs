@@ -34,6 +34,10 @@ class Space : Node {
         Console.WriteLine(" - "+exit);
         }
     }
+
+    public void AddItem (Item item) {
+        items.Add(item);
+    }
     
     public void Goodbye () {
     }
