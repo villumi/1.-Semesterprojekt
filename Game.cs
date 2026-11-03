@@ -48,11 +48,32 @@ class Game {
           Console.WriteLine(" - go    Follow an exit");
           Console.WriteLine(" - help  Display a help message");
           break;
-        case "complete":
+        case "complete": //remove, made to check functionality of completing player choice. 
           Console.WriteLine("Auto completed room");
-          context.GetCurrent().haveCompleted=true;
-          context.GetCurrent().Complete();
+          context.GetCurrent().haveCompleted=true; //include in complete() method?
+          context.GetCurrent().Complete(); 
           break;
+        case "choose":
+            //Checks if choice has been made already
+            if (context.GetCurrent().haveCompleted) {
+                Console.WriteLine("No choices left to make here");
+                break;
+            }
+            Item? chosen = null; //variable to hold players chosen item
+            foreach(Item item in context.GetCurrent().items) { //loops through all items in the current space and assigns an item if it matches with the given parameter
+                if (item.Name == parameters[0]) {
+                    chosen = item;
+                }
+            }
+            if (chosen != null){
+                context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
+                Console.WriteLine("you chose"+parameters[0]);
+                //Can add WriteLine here with information on choice, based on chosen. 
+                context.GetCurrent().haveCompleted=true; //include in complete() method?
+                context.GetCurrent().Complete(); 
+                break;
+            } else Console.WriteLine("You cannot choose this");
+            break;
         default:
           Console.WriteLine("Woopsie, I don't understand '"+command+"' 😕");
           break;

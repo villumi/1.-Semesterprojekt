@@ -18,7 +18,7 @@ public class Inventory {
    public int CalculateScore () {
        int total = 0; 
        foreach (Item item in items) {
-           total += item.PointValue;
+           total += item.PointValue; //Initial pointvalue might have to be added. 
        }
        return total; 
    } 

@@ -4,6 +4,7 @@
 class Context {
   Space current;
   bool done = false;
+  public Inventory inventory = new Inventory(); //make public?
   
   public Context (Space node) {
     current = node;
@@ -11,6 +12,10 @@ class Context {
   
   public Space GetCurrent() {
     return current;
+  }
+
+  public Inventory GetInventory() {
+      return inventory;
   }
   
   public void Transition (string direction) {
