@@ -8,7 +8,7 @@ class Space : Node {
     public bool haveCompleted = false; //haveCompleted tracks whether the player has made a choice in a space
     public HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     private string roomMessage;
-    public Space (String name, string roomMessage = "") : base(name)
+    public Space (string name, string roomMessage = "") : base(name) // ="" makes it so that a constructor call with only a name still works
     {
         this.roomMessage = roomMessage;
     }
@@ -32,7 +32,7 @@ class Space : Node {
     }
     
     public void Complete () {
-        this.haveCompleted = true;
+        haveCompleted = true;
         HashSet<string> exits = edges.Keys.ToHashSet();
         Console.WriteLine("Current exits are:");
         foreach (String exit in exits) {

@@ -4,7 +4,7 @@
 class Context {
   Space current;
   bool done = false;
-  public Inventory inventory = new Inventory(); //make public?
+  public Inventory inventory = new Inventory(); 
   
   public Context (Space node) {
     current = node;

@@ -58,10 +58,15 @@ class Game {
                 Console.WriteLine("No choices left to make here");
                 break;
             }
+            if (parameters.Length != 1) {
+                    Console.WriteLine("I don't seem to know what that is 🤔");
+                    break;
+                }
             Item? chosen = null; //variable to hold players chosen item
             foreach(Item item in context.GetCurrent().items) { //loops through all items in the current space and assigns an item if it matches the given parameter
                 if (item.Name == parameters[0]) {
                     chosen = item;
+                    break;
                 }
             }
             if (chosen != null){
