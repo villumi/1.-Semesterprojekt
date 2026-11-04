@@ -2,7 +2,7 @@
  */
  
 public class Inventory {
-    private List<Item> items; //using a List from the collections namespace, use hashset instead? (makes sure you can have no duplicates)
+   private List<Item> items; //using a List from the collections namespace, use hashset instead? (makes sure you can have no duplicates)
 
     //Constructor
    public Inventory () {
@@ -12,6 +12,13 @@ public class Inventory {
    //Method for adding an Item to inventory/items 
    public void FetchItem (Item item) {
        items.Add(item);
+   }
+
+   //prints every item in the list
+   public void GetItems() {
+       foreach (Item item in this.items) {
+           Console.WriteLine(item.name);
+       }
    }
    
    //Method for calculating score

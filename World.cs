@@ -3,6 +3,10 @@
 
 class World {
   Space entry;
+  //intialize total rooms (this is a bit inconvinient to track total rooms like this but was the only way i could find around adding all the spaces into list and looping through them)
+  public int totalRooms = 8;
+  //tracks rooms completed
+  public int roomsCompleted;
   
   public World () {
     Space room    = new Space("Room", "Der er en nøgle, du kan samle den op ved at skrive 'interact'");

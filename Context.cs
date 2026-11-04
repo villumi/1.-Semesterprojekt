@@ -29,6 +29,18 @@ class Context {
       current.Welcome();
       }
     }
+
+    //Method to call when all rooms are completed
+    public void GameComplete () {
+        Console.WriteLine("Congratulations you have completed every room!");
+
+        Console.WriteLine("You picked up these items");
+
+        inventory.GetItems();
+
+        Console.WriteLine("Your total score is: " + inventory.CalculateScore());
+        
+    }
   
   public void MakeDone () {
     done = true;

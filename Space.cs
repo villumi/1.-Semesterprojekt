@@ -2,7 +2,6 @@
  */
 
 class Space : Node {
-
     //Initiallizes the haveVisted variable for the space class
     public bool haveVisited = false;
     public bool haveCompleted = false; //haveCompleted tracks whether the player has made a choice in a space
@@ -30,6 +29,7 @@ class Space : Node {
             this.Complete();
             }
     }
+    
     
     public void Complete () {
         haveCompleted = true;

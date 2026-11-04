@@ -7,6 +7,7 @@ class Game {
   
   static void Main (string[] args) {
     Console.WriteLine("Welcome to the World of Zuul!");
+    Console.WriteLine(world.totalRooms);
     
     context.GetCurrent().Welcome();
     
@@ -50,7 +51,14 @@ class Game {
           break;
         case "complete": //remove, made to check functionality of completing player choice. 
           Console.WriteLine("Auto completed room");
-          context.GetCurrent().Complete(); 
+          context.GetCurrent().Complete();
+          //Incremeants rooms completed variable when a room is completed
+          world.roomsCompleted++;
+          //Checks if rooms completed is equal to total rooms
+          if (world.roomsCompleted == world.totalRooms) {
+              //Calls the gamecomplete method
+              context.GameComplete();
+          }
           break;
         case "choose":
             //Checks if choice has been made already
@@ -73,7 +81,14 @@ class Game {
                 context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
                 //Can add WriteLine here with information on choice, based on chosen. 
-                context.GetCurrent().Complete(); 
+                context.GetCurrent().Complete();
+                //Incremeants rooms completed variable when a room is completed
+                world.roomsCompleted++;
+                //Checks if rooms completed is equal to total rooms
+                if (world.roomsCompleted == world.totalRooms) {
+                    //Calls the gamecomplete method
+                    context.GameComplete();
+                }
                 break;
             } else Console.WriteLine("You cannot choose "+parameters[0]);
             break;
