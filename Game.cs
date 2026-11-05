@@ -50,6 +50,7 @@ class Game {
           Console.WriteLine(" - bye   Exit the program");
           Console.WriteLine(" - go    Follow an exit");
           Console.WriteLine(" - help  Display a help message");
+          Console.WriteLine(" - choose choose a option");
           break;
         case "complete": //remove, made to check functionality of completing player choice. 
           Console.WriteLine("Auto completed room");
