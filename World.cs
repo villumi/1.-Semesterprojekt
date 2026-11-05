@@ -3,8 +3,6 @@
 
 class World {
   Space entry;
-  //tracks rooms completed
-  public int roomsCompleted;
   
   public World () {
     Space room    = new Space("Room");

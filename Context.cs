@@ -4,6 +4,7 @@
 class Context {
   private Space current;
   private bool done = false;
+  public int roomsCompleted;
   private Inventory inventory = new Inventory(); 
   
   public Context (Space node) {
