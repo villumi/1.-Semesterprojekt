@@ -9,14 +9,12 @@ class World {
   public static int totalRooms;
   
   public World () {
-    Space room    = new Space("Room", "Der er en nøgle, du kan samle den op ved at skrive 'interact'");
-    Console.WriteLine(totalRooms);
-    Space home = new Space("Home", "Something 1");
-    Console.WriteLine(totalRooms);
+    Space room    = new Space("Room");
+    Space home = new Space("Home");
     Space garden = new Space("Garden");
     Console.WriteLine(totalRooms);
     Space garage = new Space("Garage");
-    Space driveway     = new Space("Driveway", "Choose method of transport:");
+    Space driveway     = new Space("Driveway");
     Space workplace      = new Space("Workplace");
     Space supermarket  = new Space("Supermarket");
     Space shopping  = new Space("Shopping");
