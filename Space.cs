@@ -62,7 +62,13 @@ class Space : Node {
         return haveVisited;
     }
 
-    public HashSet<Item> GetItems() {
-        return items;
+    public Item? FindItem(string name) {
+        foreach (Item item in items) {
+            if (item.Name == name) {
+                return item;
+            }
+        }
+    
+        return null;
     }
 }
