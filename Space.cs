@@ -28,17 +28,17 @@ class Space : Node {
         } else {
             Console.WriteLine("- This room has been visited there is nothing left to see");
             Console.WriteLine();
-            this.Complete();
             }
     }
     
     //Method to complete a room
     public void Complete () {
-        haveCompleted = true;
-        HashSet<string> exits = edges.Keys.ToHashSet();
-        Console.WriteLine("Current exits are:");
-        foreach (String exit in exits) {
-        Console.WriteLine(" - "+exit);
+        if (haveCompleted == false){ //Guard so a room can only be completed once
+            haveCompleted = true;
+            Console.WriteLine("Current exits are:");
+            foreach (String exit in edges.Keys) { //Has access to edges.Keys as space is a child class of node
+            Console.WriteLine(" - "+exit);
+            }
         }
     }
 
@@ -62,13 +62,13 @@ class Space : Node {
         return haveVisited;
     }
 
-    public Item? FindItem(string name) {
+    //returns a specific item given its name
+    public Item? FindItem(string name) { 
         foreach (Item item in items) {
             if (item.Name == name) {
                 return item;
             }
         }
-    
         return null;
     }
 }
