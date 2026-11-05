@@ -2,9 +2,9 @@
  */
 
 class Context {
-  Space current;
-  bool done = false;
-  public Inventory inventory = new Inventory(); 
+  private Space current;
+  private bool done = false;
+  private Inventory inventory = new Inventory(); 
   
   public Context (Space node) {
     current = node;
@@ -17,7 +17,8 @@ class Context {
   public Inventory GetInventory() {
       return inventory;
   }
-  
+
+  //Transition between rooms
   public void Transition (string direction) {
     Space next = current.FollowEdge(direction);
     if (next==null) {

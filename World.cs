@@ -3,7 +3,6 @@
 
 class World {
   Space entry;
-  //intialize total rooms (this is a bit inconvinient to track total rooms like this but was the only way i could find around adding all the spaces into list and looping through them)
   //tracks rooms completed
   public int roomsCompleted;
   public static int totalRooms;

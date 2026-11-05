@@ -2,12 +2,11 @@
  */
 using System.Text.Json;
 class Space : Node {
-    //Initiallizes the haveVisted variable for the space class
     static Dictionary<string, string> messages =
-            JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText("rooms.json"))!;
-    public bool haveVisited;
-    public bool haveCompleted; //haveCompleted tracks whether the player has made a choice in a space
-    public HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
+            JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText("rooms.json"))!; 
+    private bool haveVisited;
+    private bool haveCompleted; //haveCompleted tracks whether the player has made a choice in a space
+    private HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     private string roomMessage;
     public Space (string name) : base(name)
     {
@@ -33,7 +32,7 @@ class Space : Node {
             }
     }
     
-    
+    //Method to complete a room
     public void Complete () {
         haveCompleted = true;
         HashSet<string> exits = edges.Keys.ToHashSet();
@@ -52,5 +51,18 @@ class Space : Node {
     
     public override Space FollowEdge (string direction) {
         return (Space) (base.FollowEdge(direction));
+    }
+
+    //getters
+    public bool GetHaveCompleted() {
+        return haveCompleted;
+    }
+
+    public bool GetHaveVisited() {
+        return haveVisited;
+    }
+
+    public HashSet<Item> GetItems() {
+        return items;
     }
 }

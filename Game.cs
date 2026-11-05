@@ -7,17 +7,14 @@ class Game {
   
   static void Main (string[] args) {
     Console.WriteLine("Welcome to the World of Zuul!");
-    
-    
     context.GetCurrent().Welcome();
-
-    Console.WriteLine(World.totalRooms);
     
-    while (context.IsDone()==false) {
+    while (context.IsDone()==false) { //Running game code until IsDone is set to true
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line==null) continue;
-      line=line.ToLower();
+      line=line.ToLower(); //Converts player input to all lower case
+
       // parse line
       string[] elements = line.Split(" ");
       string command = elements[0];
@@ -30,7 +27,7 @@ class Game {
           context.MakeDone();
           break;
         case "go":
-          if (context.GetCurrent().haveCompleted) {
+          if (context.GetCurrent().GetHaveCompleted()) {
             if (parameters.Length!=1) {
                 Console.WriteLine("I don't seem to know where that is 🤔");
                 break; //Changed a return to a break (return closed the game)
@@ -65,7 +62,7 @@ class Game {
           break;
         case "choose":
             //Checks if choice has been made already
-            if (context.GetCurrent().haveCompleted) {
+            if (context.GetCurrent().GetHaveCompleted()) {
                 Console.WriteLine("No choices left to make here");
                 break;
             }
@@ -74,14 +71,14 @@ class Game {
                     break;
                 }
             Item? chosen = null; //variable to hold players chosen item
-            foreach(Item item in context.GetCurrent().items) { //loops through all items in the current space and assigns an item if it matches the given parameter
+            foreach(Item item in context.GetCurrent().GetItems()) { //loops through all items in the current space and assigns an item if it matches the given parameter
                 if (item.Name == parameters[0]) {
                     chosen = item;
                     break;
                 }
             }
             if (chosen != null){
-                Console.Clear();
+                Console.Clear(); //clears terminal 
                 context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
                 //Can add WriteLine here with information on choice, based on chosen. 
