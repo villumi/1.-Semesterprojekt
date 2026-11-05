@@ -12,7 +12,6 @@ class World {
     Space room    = new Space("Room");
     Space home = new Space("Home");
     Space garden = new Space("Garden");
-    Console.WriteLine(totalRooms);
     Space garage = new Space("Garage");
     Space driveway     = new Space("Driveway");
     Space workplace      = new Space("Workplace");
