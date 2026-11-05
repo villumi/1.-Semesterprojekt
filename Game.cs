@@ -55,7 +55,7 @@ class Game {
           //Incremeants rooms completed variable when a room is completed
           world.roomsCompleted++;
           //Checks if rooms completed is equal to total rooms
-          if (world.roomsCompleted == World.totalRooms) {
+          if (world.roomsCompleted == Space.totalRooms) {
               //Calls the gamecomplete method
               context.GameComplete();
           }
@@ -81,7 +81,7 @@ class Game {
                 //Incremeants rooms completed variable when a room is completed
                 world.roomsCompleted++;
                 //Checks if rooms completed is equal to total rooms
-                if (world.roomsCompleted == World.totalRooms) {
+                if (world.roomsCompleted == Space.totalRooms) {
                     //Calls the gamecomplete method
                     context.GameComplete();
                 }

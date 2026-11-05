@@ -8,9 +8,10 @@ class Space : Node {
     private bool haveCompleted; //haveCompleted tracks whether the player has made a choice in a space
     private HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     private string roomMessage;
+    public static int totalRooms;
     public Space (string name) : base(name)
     {
-        World.totalRooms++;
+        totalRooms++;
         roomMessage = messages.GetValueOrDefault(name, "");
     }
     

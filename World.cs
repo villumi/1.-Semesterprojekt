@@ -5,7 +5,6 @@ class World {
   Space entry;
   //tracks rooms completed
   public int roomsCompleted;
-  public static int totalRooms;
   
   public World () {
     Space room    = new Space("Room");
