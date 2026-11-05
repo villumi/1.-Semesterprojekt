@@ -1,7 +1,7 @@
 /* Item class for various interachtable items
 */
 public class Item {
-    public string name;
+    private string name;
     private int pointValue; 
 
     //Constructor

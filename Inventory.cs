@@ -17,7 +17,7 @@ public class Inventory {
    //prints every item in the list
    public void GetItems() {
        foreach (Item item in this.items) {
-           Console.WriteLine(item.name);
+           Console.WriteLine(item.Name);
        }
    }
    
