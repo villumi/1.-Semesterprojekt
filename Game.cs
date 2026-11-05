@@ -15,7 +15,7 @@ class Game {
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line==null) continue;
-      
+      line=line.ToLower();
       // parse line
       string[] elements = line.Split(" ");
       string command = elements[0];
@@ -78,6 +78,7 @@ class Game {
                 }
             }
             if (chosen != null){
+                Console.Clear();
                 context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
                 //Can add WriteLine here with information on choice, based on chosen. 

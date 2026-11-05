@@ -1,22 +1,24 @@
 /* Space class for modeling spaces (rooms, caves, ...)
  */
-
+using System.Text.Json;
 class Space : Node {
     //Initiallizes the haveVisted variable for the space class
+    static Dictionary<string, string> messages =
+            JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText("rooms.json"))!;
     public bool haveVisited = false;
     public bool haveCompleted = false; //haveCompleted tracks whether the player has made a choice in a space
     public HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     private string roomMessage;
-    public Space (string name, string roomMessage = "") : base(name) // ="" makes it so that a constructor call with only a name still works
+    public Space (string name) : base(name)
     {
-        this.roomMessage = roomMessage;
+            roomMessage = messages.GetValueOrDefault(name, "");
     }
     
     public void Welcome () {
         Console.WriteLine("You are now at "+name);
         if (!haveVisited)
         {
-            Console.WriteLine("- " + roomMessage);
+            Console.WriteLine(roomMessage);
             Console.WriteLine();
             //prints all options/items in a given room
             foreach (Item option in items) {

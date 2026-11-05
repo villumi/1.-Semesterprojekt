@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="rooms.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  
 </Project>
+
