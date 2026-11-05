@@ -3,13 +3,14 @@
 
 class Space : Node {
     //Initiallizes the haveVisted variable for the space class
-    public bool haveVisited = false;
-    public bool haveCompleted = false; //haveCompleted tracks whether the player has made a choice in a space
+    public bool haveVisited;
+    public bool haveCompleted; //haveCompleted tracks whether the player has made a choice in a space
     public HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     private string roomMessage;
     public Space (string name, string roomMessage = "") : base(name) // ="" makes it so that a constructor call with only a name still works
     {
         this.roomMessage = roomMessage;
+        World.totalRooms++;
     }
     
     public void Welcome () {

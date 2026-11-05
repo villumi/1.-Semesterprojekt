@@ -7,9 +7,11 @@ class Game {
   
   static void Main (string[] args) {
     Console.WriteLine("Welcome to the World of Zuul!");
-    Console.WriteLine(world.totalRooms);
+    
     
     context.GetCurrent().Welcome();
+
+    Console.WriteLine(World.totalRooms);
     
     while (context.IsDone()==false) {
       Console.Write("> ");
@@ -55,7 +57,7 @@ class Game {
           //Incremeants rooms completed variable when a room is completed
           world.roomsCompleted++;
           //Checks if rooms completed is equal to total rooms
-          if (world.roomsCompleted == world.totalRooms) {
+          if (world.roomsCompleted == World.totalRooms) {
               //Calls the gamecomplete method
               context.GameComplete();
           }
@@ -85,7 +87,7 @@ class Game {
                 //Incremeants rooms completed variable when a room is completed
                 world.roomsCompleted++;
                 //Checks if rooms completed is equal to total rooms
-                if (world.roomsCompleted == world.totalRooms) {
+                if (world.roomsCompleted == World.totalRooms) {
                     //Calls the gamecomplete method
                     context.GameComplete();
                 }
