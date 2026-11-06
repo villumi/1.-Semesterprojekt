@@ -50,15 +50,19 @@ class Game {
           Console.WriteLine(" - choose choose a option");
           break;
         case "complete": //remove, made to check functionality of completing player choice. 
-          Console.WriteLine("Auto completed room");
-          context.GetCurrent().Complete();
-          //Incremeants rooms completed variable when a room is completed
-          context.roomsCompleted++;
-          //Checks if rooms completed is equal to total rooms
-          if (context.roomsCompleted == Space.totalRooms) {
-              //Calls the gamecomplete method
-              context.GameComplete();
-          }
+            if (context.GetCurrent().GetHaveCompleted()) {
+                Console.WriteLine("No choices left to make here");
+                break;
+            }
+            Console.WriteLine("Auto completed room");
+            context.GetCurrent().Complete();
+            //Incremeants rooms completed variable when a room is completed
+            context.roomsCompleted++;
+            //Checks if rooms completed is equal to total rooms
+            if (context.roomsCompleted == Space.totalRooms) {
+                //Calls the gamecomplete method
+                context.GameComplete();
+            }
           break;
         case "choose":
             //Checks if choice has been made already
