@@ -34,7 +34,7 @@ class Space : Node {
     
     //Method to complete a room
     public void Complete () {
-        if (haveCompleted == false){ //Guard so a room can only be completed once
+        if (!haveCompleted){ //Guard so a room can only be completed once
             haveCompleted = true;
             Console.WriteLine("Current exits are:");
             foreach (String exit in edges.Keys) { //Has access to edges.Keys as space is a child class of node
