@@ -57,7 +57,7 @@ class Game {
             Console.WriteLine("Auto completed room");
             context.GetCurrent().Complete();
             //Incremeants rooms completed variable when a room is completed
-            context.roomsCompleted++;
+            context.IncrementRooms();
             //Checks if rooms completed is equal to total rooms
             if (context.roomsCompleted == Space.totalRooms) {
                 //Calls the gamecomplete method
@@ -83,7 +83,7 @@ class Game {
                 //Can add WriteLine here with information on choice, based on chosen. 
                 context.GetCurrent().Complete();
                 //Incremeants rooms completed variable when a room is completed
-                context.roomsCompleted++;
+                context.IncrementRooms();
                 //Checks if rooms completed is equal to total rooms
                 if (context.roomsCompleted == Space.totalRooms) {
                     //Calls the gamecomplete method

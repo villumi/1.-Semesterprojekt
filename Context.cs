@@ -4,19 +4,24 @@
 class Context {
   private Space current;
   private bool done = false;
-  public int roomsCompleted;
+  public int roomsCompleted { get; private set; }
   private Inventory inventory = new Inventory(); 
   
   public Context (Space node) {
     current = node;
   }
-  
+
+  //Getters and setters
   public Space GetCurrent() {
     return current;
   }
 
   public Inventory GetInventory() {
       return inventory;
+  }
+
+  public void IncrementRooms() {
+      roomsCompleted++;
   }
 
   //Transition between rooms
