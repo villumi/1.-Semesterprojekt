@@ -5,8 +5,8 @@ class Space : Node {
     static Dictionary<string, string> messages =
             JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText("rooms.json"))!; 
     private bool haveVisited;
-    private bool haveCompleted; //haveCompleted tracks whether the player has made a choice in a space
-    private HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
+    public bool haveCompleted; //haveCompleted tracks whether the player has made a choice in a space
+    public HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     private string roomMessage;
     public static int totalRooms { get; private set; }
     public Space (string name) : base(name)
