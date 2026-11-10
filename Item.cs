@@ -2,10 +2,10 @@
 */
 public class Item {
     private string name;
-    private int pointValue; 
+    private double pointValue; 
 
     //Constructor
-    public Item (string name, int pointValue) {
+    public Item (string name, double pointValue) {
         this.name = name;
         this.pointValue = pointValue;
     }
@@ -15,8 +15,7 @@ public class Item {
         get { return name; }
     }
 
-    public int PointValue {
+    public double PointValue {
         get { return pointValue; }
     }
 }
- 

@@ -1,3 +1,126 @@
 {
-  "Driveway": "Du står i indkørslen og mangler en bil til at kunne komme på arbejde.\nValget står mellem en elbil og en brændstofbil.\nDanskere udleder i gennemsnit 1,4 tons CO2e om året for private transportmidler.\nDet gælder både køb og kørsel.\n\nHvilket valg er bedst baseret på bilens udledning gennem dets levetid?"
+  "Room": {
+    "roomMessage": "You wake up and you are hungry. You go to the fridge where you see last night's leftovers. You don't really want this for breakfast, but is it worth it to just throw it out? You consider making a new meal, but that might mean even more leftovers ending up in the fridge.\n\nWhat do you do?",
+    "items": [
+      {
+        "option": "leftovers",
+        "pointValue": -0.493
+      },
+      {
+        "option": "cook",
+        "pointValue": 0
+      }
+    ]
+  },
+  "Home": {
+    "roomMessage": "It is a cold fall day. You begin to freeze and you go to turn up the radiator. Heating your home takes energy and even small changes to the temperature has a big impact on your CO2 emission. Each degree you turn up the heat releases 5% more CO2.\n\nUse 'choose sweater' or 'choose heating' to select a option\nWhat do you do?",
+    "items": [
+      {
+        "option": "sweater",
+        "pointValue": -2.59
+      },
+      {
+        "option": "heating",
+        "pointValue": 0
+      }
+    ]
+  },
+  "Garden": {
+    "roomMessage": "You realise that you need to mow the grass. Your old mower is broken, and you debate with yourself whether or not you should just get a new one. Maybe an electric one even though it might need to get charged halfway through. A new petrol driven one will get the job done easily with petrol to spare.\n\nWhat do you choose?",
+    "items": [
+      {
+        "option": "electric",
+        "pointValue": -0.114
+      },
+      {
+        "option": "petrol",
+        "pointValue": 0
+      }
+    ]
+  },
+  "Garage": {
+    "roomMessage": "You trip and fall.\n\nWhat do you do?",
+    "items": [
+      {
+        "option": "up",
+        "pointValue": 0
+      },
+      {
+        "option": "wait",
+        "pointValue": 0
+      }
+    ]
+  },
+  "Driveway": {
+    "roomMessage": "You need a car to get to work. Your choices are an electric car or a petrol car. On average people emit around 1.5 tons of CO2e a year on private transportation. That is counting both production of the vehicle and running it.\n\nWhat do you buy?",
+    "items": [
+      {
+        "option": "electric",
+        "pointValue": -2.99
+      },
+      {
+        "option": "petrol",
+        "pointValue": 0
+      }
+    ]
+  },
+  "Workplace": {
+    "roomMessage": "You talk with one of your coworkers about a trip they went on recently. They went to Vienna with the entire family. You get so inspired that you decide to book a trip yourself.\n\nAbout 12% of the average CO2 emissions stems from vacations. It is mostly from the transportation used to get to these destinations that emits a massive amount of CO2.\n\nWhat means of transport do you choose?",
+    "items": [
+      {
+        "option": "car",
+        "pointValue": -0.26
+      },
+      {
+        "option": "electric",
+        "pointValue": -0.4
+      },
+      {
+        "option": "train",
+        "pointValue": -0.46
+      },
+      {
+        "option": "plane",
+        "pointValue": 0
+      }
+    ]
+  },
+  "Shopping": {
+    "roomMessage": "You think you need some new clothes, but at this point you are a bit more environmentally conscious. You go into the thrift store looking for some new t-shirts, but the selection is not as big as you are used to on the internet. You might be able to find about 30% of what you need at the thrift store.\n\nWhat do you do?",
+    "items": [
+      {
+        "option": "used",
+        "pointValue": -0.14
+      },
+      {
+        "option": "new",
+        "pointValue": 0
+      },
+      {
+        "option": "nothing",
+        "pointValue": -0.96
+      }
+    ]
+  },
+  "Supermarket": {
+    "roomMessage": "It is time to go shopping. Your choices in the supermarket is one of the biggest ways that you can reduce your carbon footprint. That is why you have decided to shop a bit differently today.\n\nHow has your shopping changed?",
+    "items": [
+      {
+        "option": "vegan",
+        "pointValue": -4.79
+      },
+      {
+        "option": "less",
+        "pointValue": -1.51
+      },
+      {
+        "option": "organic",
+        "pointValue": -0.14
+      },
+      {
+        "option": "unchanged",
+        "pointValue": 0
+      }
+    ]
+  }
 }

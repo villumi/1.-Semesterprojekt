@@ -22,8 +22,8 @@ public class Inventory {
    }
    
    //Method for calculating score
-   public int CalculateScore () {
-       int total = 0; 
+   public double CalculateScore () {
+       double total = 23.3; 
        foreach (Item item in items) {
            total += item.PointValue; //Initial pointvalue might have to be added. 
        }

@@ -39,10 +39,15 @@ class Context {
 
     //Method to call when all rooms are completed
     public void GameComplete () {
-        Console.WriteLine("Congratulations you have completed every room!");
-        Console.WriteLine("You picked up these items");
-        inventory.GetItems();
-        Console.WriteLine("Your total score is: " + inventory.CalculateScore());
+        double completescore = inventory.CalculateScore();
+        Console.WriteLine("Your total score is: " + Math.Round(completescore, 1));
+        if (completescore<15.5) {
+            Console.WriteLine("That means you are an CLIMATE FORERUNNER");
+        } else if (completescore>20) {
+            Console.WriteLine("That means you are an AVERAGE CONSUMER");
+        } else {
+            Console.WriteLine("That means you are a CLIMATE CONSCIOUS");
+        }
         done = true;
     }
   

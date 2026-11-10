@@ -37,17 +37,6 @@ class World {
     
     this.entry = home;
 
-    //creating items
-    Item car = new Item("car",5000);
-    Item bicycle = new Item("bicycle", -5000);
-    Item bus = new Item("bus",-100);
-    
-    //adding items to spaces
-    driveway.AddItem(car);
-    driveway.AddItem(bicycle);
-    driveway.AddItem(bus);
-    
-    
   }
   
   public Space GetEntry () {
