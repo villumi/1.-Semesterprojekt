@@ -28,7 +28,7 @@ class Game {
           context.MakeDone();
           break;
         case "go":
-          if (context.GetCurrent().haveCompleted) {
+          if (context.GetCurrent().HaveCompleted) {
             if (parameters.Length!=1) {
                 Console.WriteLine("I don't seem to know where that is 🤔");
                 break; //Changed a return to a break (return closed the game)
@@ -55,14 +55,14 @@ class Game {
           //Incremeants rooms completed variable when a room is completed
           context.IncrementRooms();
           //Checks if rooms completed is equal to total rooms
-          if (context.roomsCompleted == Space.totalRooms) {
+          if (context.RoomsCompleted == Space.TotalRooms) {
               //Calls the gamecomplete method
               context.GameComplete();
           }
           break;
         case "choose":
             //Checks if choice has been made already
-            if (context.GetCurrent().haveCompleted) {
+            if (context.GetCurrent().HaveCompleted) {
                 Console.WriteLine("No choices left to make here");
                 break;
             }
@@ -82,7 +82,7 @@ class Game {
                 //Incremeants rooms completed variable when a room is completed
                 context.IncrementRooms();
                 //Checks if rooms completed is equal to total rooms
-                if (context.roomsCompleted == Space.totalRooms) {
+                if (context.RoomsCompleted == Space.TotalRooms) {
                     //Calls the gamecomplete method
                     context.GameComplete();
                 }

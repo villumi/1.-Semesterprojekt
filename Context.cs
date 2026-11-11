@@ -4,7 +4,7 @@
 class Context {
   private Space current;
   private bool done = false;
-  public int roomsCompleted { get; private set; }
+  public int RoomsCompleted { get; private set; }
   private Inventory inventory = new Inventory(); 
   
   public Context (Space node) {
@@ -21,7 +21,7 @@ class Context {
   }
 
   public void IncrementRooms() {
-      roomsCompleted++;
+      RoomsCompleted++;
   }
 
   //Transition between rooms

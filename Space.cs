@@ -11,14 +11,14 @@ class Space : Node {
         }
     )!;
     private bool haveVisited;
-    public bool haveCompleted {get; private set;} //haveCompleted tracks whether the player has made a choice in a space
+    public bool HaveCompleted {get; private set;} //haveCompleted tracks whether the player has made a choice in a space
     private HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
     public IReadOnlyCollection<Item> Items => items;
     private string roomMessage;
-    public static int totalRooms { get; private set; }
+    public static int TotalRooms { get; private set; }
     public Space (string name) : base(name)
     {
-        totalRooms++;
+        TotalRooms++;
         RoomData data = rooms[name];
         roomMessage = data.roomMessage;
         foreach (ItemData item in data.items)
@@ -51,8 +51,8 @@ class Space : Node {
     
     //Method to complete a room
     public void Complete () {
-        if (!haveCompleted){ //Guard so a room can only be completed once
-            haveCompleted = true;
+        if (!HaveCompleted){ //Guard so a room can only be completed once
+            HaveCompleted = true;
             Console.WriteLine("Current exits are:");
             foreach (String exit in edges.Keys) { //Has access to edges.Keys as space is a child class of node
             Console.WriteLine(" - "+exit);
@@ -73,7 +73,7 @@ class Space : Node {
 
     //getters
     public bool GetHaveCompleted() {
-        return haveCompleted;
+        return HaveCompleted;
     }
 
     public bool GetHaveVisited() {
