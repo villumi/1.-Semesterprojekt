@@ -70,13 +70,9 @@ class Game {
                     Console.WriteLine("I don't seem to know what that is 🤔");
                     break;
                 }
-            Item? chosen = null; //variable to hold players chosen item
-            foreach(Item item in context.GetCurrent().Items) { //loops through all items in the current space and assigns an item if it matches the given parameter
-                if (item.Name == parameters[0]) {
-                    chosen = item;
-                    break;
-                }
-            }
+               
+             Item? chosen = context.GetCurrent().FindItem(parameters[0]);  //loops through all items in the current space and assigns an item if it matches the given parameter
+             
             if (chosen != null){
                 Console.Clear();
                 context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
