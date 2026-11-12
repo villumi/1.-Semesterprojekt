@@ -1,6 +1,6 @@
 {
   "Room": {
-    "roomMessage": "You wake up and you are hungry. You go to the fridge where you see last night's leftovers. You don't really want this for breakfast, but is it worth it to just throw it out? You consider making a new meal, but that might mean even more leftovers ending up in the fridge.\n\nWhat do you do?",
+    "roomMessage": "You wake up and you are hungry. You go to the fridge where you see last night's leftovers. You don't really want this for breakfast, but is it worth it to just throw it out? You consider making a new meal, but that might mean even more leftovers ending up in the fridge.\n\nUse 'choose leftovers' or 'choose cook' to select a option\nWhat do you do?",
     "items": [
       {
         "option": "leftovers",
@@ -13,7 +13,7 @@
     ]
   },
   "Home": {
-    "roomMessage": "It is a cold fall day. You begin to freeze and you go to turn up the radiator. Heating your home takes energy and even small changes to the temperature has a big impact on your CO2 emission. Each degree you turn up the heat releases 5% more CO2.\n\nUse 'choose sweater' or 'choose heating' to select a option\nWhat do you do?",
+    "roomMessage": "It is a cold fall day. You begin to freeze and you go to turn up the radiator. Heating your home takes energy and even small changes to the temperature has a big impact on your CO2 emission. Each degree you turn up the heat releases 5% more CO2.\n\nWhat do you do?",
     "items": [
       {
         "option": "sweater",

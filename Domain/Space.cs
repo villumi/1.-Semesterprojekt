@@ -1,15 +1,16 @@
 /* Space class for modeling spaces (rooms, caves, ...)
  */
-using System.Text.Json;
-class Space : Node {
-    static Dictionary<string, RoomData> rooms =
-    JsonSerializer.Deserialize<Dictionary<string, RoomData>>(
-        File.ReadAllText("rooms.json"),
-        new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        }
-    )!;
+ using System.Text.Json;
+ 
+ class Space : Node
+ {
+     static Dictionary<string, RoomData> rooms =
+        JsonSerializer.Deserialize<Dictionary<string, RoomData>>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"..", "..", "..", "Rooms", "rooms.json")),
+            new JsonSerializerOptions
+             {
+                 PropertyNameCaseInsensitive = true
+             }
+         )!;
     private bool haveVisited;
     public bool HaveCompleted {get; private set;} //haveCompleted tracks whether the player has made a choice in a space
     private HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space

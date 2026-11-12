@@ -42,11 +42,11 @@ class Context {
         double completescore = inventory.CalculateScore();
         Console.WriteLine("Your total score is: " + Math.Round(completescore, 1));
         if (completescore<15.5) {
-            Console.WriteLine("That means you are an CLIMATE FORERUNNER");
+            Console.WriteLine("That means you are a CLIMATE FORERUNNER");
         } else if (completescore>20) {
             Console.WriteLine("That means you are an AVERAGE CONSUMER");
         } else {
-            Console.WriteLine("That means you are a CLIMATE CONSCIOUS");
+            Console.WriteLine("That means you are CLIMATE CONSCIOUS");
         }
         done = true;
     }
