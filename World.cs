@@ -35,7 +35,7 @@ class World {
     supermarket.AddEdge("driveway", driveway);
     supermarket.AddEdge("shopping", shopping);
     
-    this.entry = home;
+    this.entry = room;
 
   }
   
