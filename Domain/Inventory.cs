@@ -10,7 +10,7 @@ public class Inventory {
    }
 
    //Method for adding an Item to inventory/items 
-   public void FetchItem (Item item) {
+   public void AddItemToInventory (Item item) {
        items.Add(item);
    }
 

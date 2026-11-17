@@ -75,7 +75,7 @@ class Game {
              
             if (chosen != null){
                 Console.Clear();
-                context.GetInventory().FetchItem(chosen); //Fetches item to players inventory
+                context.GetInventory().AddItemToInventory(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
                 //Can add WriteLine here with information on choice, based on chosen. 
                 context.GetCurrent().Complete();
