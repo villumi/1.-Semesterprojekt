@@ -77,8 +77,8 @@ class Game {
                 Console.Clear();
                 context.GetInventory().AddItemToInventory(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
-                //Can add WriteLine here with information on choice, based on chosen. 
-                context.GetCurrent().Complete();
+                // Completing room 
+                context.GetCurrent().Complete(chosen);
                 //Incremeants rooms completed variable when a room is completed
                 context.IncrementRooms();
                 //Checks if rooms completed is equal to total rooms

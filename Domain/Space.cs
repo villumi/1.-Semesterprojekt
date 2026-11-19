@@ -37,7 +37,7 @@
             //prints all options/items in a given room
             foreach (Item option in items)
             {
-                Console.WriteLine(" - " + option.Name + " (" + option.PointValue + " kg CO2e)");
+                Console.WriteLine(" - " + option.Name);
             }
             haveVisited = true;
         } else {
@@ -51,6 +51,18 @@
     }
     
     //Method to complete a room
+    public void Complete (Item choice) {
+        if (!HaveCompleted){ //Guard so a room can only be completed once
+            HaveCompleted = true;
+            Console.WriteLine("Your choice saved "+choice.PointValue+" kg CO2e");
+            Console.WriteLine("Current exits are:");
+            foreach (String exit in edges.Keys) { //Has access to edges.Keys as space is a child class of node
+            Console.WriteLine(" - "+exit);
+            }
+        }
+    }
+
+    //Overloaded method, only necessary for autocomplete
     public void Complete () {
         if (!HaveCompleted){ //Guard so a room can only be completed once
             HaveCompleted = true;
@@ -60,7 +72,7 @@
             }
         }
     }
-
+    
     public void AddItem (Item item) {
         items.Add(item);
     }
