@@ -4,11 +4,13 @@
     "items": [
       {
         "option": "leftovers",
-        "pointValue": -0.493
+        "pointValue": -0.493,
+        "itemMessage": "test"
       },
       {
         "option": "cook",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       }
     ]
   },
@@ -17,11 +19,13 @@
     "items": [
       {
         "option": "sweater",
-        "pointValue": -2.59
+        "pointValue": -2.59,
+        "itemMessage": "test"
       },
       {
         "option": "heating",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       }
     ]
   },
@@ -30,11 +34,13 @@
     "items": [
       {
         "option": "electric",
-        "pointValue": -0.114
+        "pointValue": -0.114,
+        "itemMessage": "test"
       },
       {
         "option": "petrol",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       }
     ]
   },
@@ -56,11 +62,13 @@
     "items": [
       {
         "option": "electric",
-        "pointValue": -2.99
+        "pointValue": -2.99,
+        "itemMessage": "test"
       },
       {
         "option": "petrol",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       }
     ]
   },
@@ -69,19 +77,23 @@
     "items": [
       {
         "option": "car",
-        "pointValue": -0.26
+        "pointValue": -0.26,
+        "itemMessage": "test"
       },
       {
         "option": "electric",
-        "pointValue": -0.4
+        "pointValue": -0.4,
+        "itemMessage": "test"
       },
       {
         "option": "train",
-        "pointValue": -0.46
+        "pointValue": -0.46,
+        "itemMessage": "test"
       },
       {
         "option": "plane",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       }
     ]
   },
@@ -90,15 +102,18 @@
     "items": [
       {
         "option": "used",
-        "pointValue": -0.14
+        "pointValue": -0.14,
+        "itemMessage": "test"
       },
       {
         "option": "new",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       },
       {
         "option": "nothing",
-        "pointValue": -0.96
+        "pointValue": -0.96,
+        "itemMessage": "test"
       }
     ]
   },
@@ -107,19 +122,23 @@
     "items": [
       {
         "option": "vegan",
-        "pointValue": -4.79
+        "pointValue": -4.79,
+        "itemMessage": "test"
       },
       {
         "option": "less",
-        "pointValue": -1.51
+        "pointValue": -1.51,
+        "itemMessage": "test"
       },
       {
         "option": "organic",
-        "pointValue": -0.14
+        "pointValue": -0.14,
+        "itemMessage": "test"
       },
       {
         "option": "unchanged",
-        "pointValue": 0
+        "pointValue": 0,
+        "itemMessage": "test"
       }
     ]
   }

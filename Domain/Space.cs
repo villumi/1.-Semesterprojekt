@@ -24,7 +24,7 @@
         roomMessage = data.roomMessage;
         foreach (ItemData item in data.items)
         {
-            AddItem(new Item(item.option, item.pointValue));
+            AddItem(new Item(item.option, item.pointValue, item.itemMessage));
         }
     }
     
@@ -55,6 +55,7 @@
         if (!HaveCompleted){ //Guard so a room can only be completed once
             HaveCompleted = true;
             Console.WriteLine("Your choice saved "+choice.PointValue+" kg CO2e");
+            Console.WriteLine(choice.ItemMessage);
             Console.WriteLine("Current exits are:");
             foreach (String exit in edges.Keys) { //Has access to edges.Keys as space is a child class of node
             Console.WriteLine(" - "+exit);
