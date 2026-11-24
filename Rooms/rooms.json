@@ -1,6 +1,6 @@
 {
   "Room": {
-    "roomMessage": "You wake up and you are hungry. You go to the fridge where you see last night's leftovers. You don't really want this for breakfast, but is it worth it to just throw it out? You consider making a new meal, but that might mean even more leftovers ending up in the fridge.\n\nUse 'choose leftovers' or 'choose cook' to select a option\nWhat do you do?",
+    "roomMessage": "You wake up and you are hungry. You go to the fridge where you see last night's leftovers. You don't really want this for breakfast, but is it worth it to just throw it out? You consider making a new meal, but that might mean even more leftovers ending up in the fridge.\n\nWhat do you do?",
     "items": [
       {
         "option": "leftovers",
@@ -41,19 +41,6 @@
         "option": "petrol",
         "pointValue": 0,
         "itemMessage": "test"
-      }
-    ]
-  },
-  "Garage": {
-    "roomMessage": "You trip and fall.\n\nWhat do you do?",
-    "items": [
-      {
-        "option": "up",
-        "pointValue": 0
-      },
-      {
-        "option": "wait",
-        "pointValue": 0
       }
     ]
   },

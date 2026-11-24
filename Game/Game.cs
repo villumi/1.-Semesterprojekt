@@ -6,9 +6,21 @@ class Game {
   static Context  context  = new Context(world.GetEntry());
   
   static void Main (string[] args) {
+    Console.Clear();
     Console.WriteLine("Welcome to the Climate GO-GETTERS!");
-    
-    
+    Console.WriteLine("Here are the commands:");
+    Console.WriteLine(" - exit  Exit the program");
+    Console.WriteLine(" - quit  Exit the program");
+    Console.WriteLine(" - bye   Exit the program");
+    Console.WriteLine(" - go 'room name'  Follow an exit");
+    Console.WriteLine(" - 1,2,3 Choose an option");
+    Console.WriteLine(" - help  Display a help message");
+    Console.WriteLine("");
+    Console.WriteLine("Press Enter to continue");
+    while (true){
+        Console.ReadLine();
+        break;
+    }
     context.GetCurrent().Welcome();
     
     while (context.IsDone()==false) {
@@ -70,6 +82,7 @@ class Game {
           Console.WriteLine(" - quit  Exit the program");
           Console.WriteLine(" - bye   Exit the program");
           Console.WriteLine(" - go    Follow an exit");
+          Console.WriteLine(" - 1,2,3 Choose an option");
           Console.WriteLine(" - help  Display a help message");
           break;
         case "complete": //remove, made to check functionality of completing player choice. 
