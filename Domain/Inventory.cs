@@ -29,4 +29,13 @@ public class Inventory {
        }
        return total; 
    } 
+   //Method for calculating savings vs average
+   public double CalculateSavedCO2() {
+       int danishPopulation = 6000000;
+       double baseline = 23.3;
+       double savedCO2 = baseline - CalculateScore();
+       double savingsForAll = 365*savedCO2 * danishPopulation;
+       double savedTons = savingsForAll/1000;
+       return savedTons;
+}
 }

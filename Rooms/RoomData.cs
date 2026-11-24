@@ -7,4 +7,5 @@ class ItemData
 {
     public string option { get; set; } = "";
     public double pointValue { get; set; }
+    public string itemMessage { get; set; } = "";
 }

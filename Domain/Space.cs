@@ -24,7 +24,7 @@
         roomMessage = data.roomMessage;
         foreach (ItemData item in data.items)
         {
-            AddItem(new Item(item.option, item.pointValue));
+            AddItem(new Item(item.option, item.pointValue, item.itemMessage));
         }
     }
     
@@ -38,7 +38,7 @@
             int itemcounter = 1;
             foreach (Item option in items)
             {
-                Console.WriteLine(itemcounter + ". " + option.Name + " (" + option.PointValue + " kg CO2e)");
+                Console.WriteLine(itemcounter + ". " + option.Name);
                 itemcounter++;
             }
             haveVisited = true;
@@ -53,6 +53,19 @@
     }
     
     //Method to complete a room
+    public void Complete (Item choice) {
+        if (!HaveCompleted){ //Guard so a room can only be completed once
+            HaveCompleted = true;
+            Console.WriteLine("Your choice saved "+choice.PointValue+" kg CO2e");
+            Console.WriteLine(choice.ItemMessage);
+            Console.WriteLine("Current exits are:");
+            foreach (String exit in edges.Keys) { //Has access to edges.Keys as space is a child class of node
+            Console.WriteLine(" - "+exit);
+            }
+        }
+    }
+
+    //Overloaded method, only necessary for autocomplete
     public void Complete () {
         if (!HaveCompleted){ //Guard so a room can only be completed once
             HaveCompleted = true;
@@ -62,7 +75,7 @@
             }
         }
     }
-
+    
     public void AddItem (Item item) {
         items.Add(item);
     }

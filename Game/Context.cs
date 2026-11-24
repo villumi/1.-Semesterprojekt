@@ -48,6 +48,15 @@ class Context {
         } else {
             Console.WriteLine("That means you are CLIMATE CONSCIOUS");
         }
+
+        double savedTons = Math.Round(inventory.CalculateSavedCO2(), 1);
+        
+        Console.WriteLine();
+        Console.WriteLine("The amount of saved tons of CO2e pr year if a percentage of the danish population did as you:");
+        Console.WriteLine($"If 100% did as you: {savedTons:N0} tons CO2e");
+        Console.WriteLine($"If 50% did as you: {savedTons*0.5:N0} tons CO2e");
+        Console.WriteLine($"If 20% did as you: {savedTons*0.20:N0} tons CO2e");
+        Console.WriteLine();
         done = true;
     }
   

@@ -30,8 +30,7 @@ class Game {
                 Console.Clear();
                 context.GetInventory().AddItemToInventory(chosen);
                 Console.WriteLine("You chose " + chosen.Name);
-                
-                context.GetCurrent().Complete();
+                context.GetCurrent().Complete(chosen);
                 context.IncrementRooms();
                 //Checks if rooms completed is equal to total rooms
                 if (context.RoomsCompleted == Space.TotalRooms) {
