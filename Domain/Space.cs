@@ -13,7 +13,7 @@
          )!;
     private bool haveVisited;
     public bool HaveCompleted {get; private set;} //haveCompleted tracks whether the player has made a choice in a space
-    private HashSet<Item> items = new HashSet<Item>(); //Attribute to contain all items in any given space
+    private List<Item> items = new List<Item>(); //Attribute to contain all items in any given space
     public IReadOnlyCollection<Item> Items => items;
     private string roomMessage;
     public static int TotalRooms { get; private set; }
@@ -35,9 +35,11 @@
             Console.WriteLine(roomMessage);
             Console.WriteLine();
             //prints all options/items in a given room
+            int itemcounter = 1;
             foreach (Item option in items)
             {
-                Console.WriteLine(" - " + option.Name + " (" + option.PointValue + " kg CO2e)");
+                Console.WriteLine(itemcounter + ". " + option.Name + " (" + option.PointValue + " kg CO2e)");
+                itemcounter++;
             }
             haveVisited = true;
         } else {
@@ -89,5 +91,11 @@
             }
         }
         return null;
+    }
+    public Item? FindItem(int number)
+    {
+        if (number < 1 || number > items.Count)
+            return null;
+        return items[number - 1];
     }
 }

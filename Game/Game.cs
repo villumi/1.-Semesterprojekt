@@ -20,7 +20,31 @@ class Game {
       string[] elements = line.Split(" ");
       string command = elements[0];
       string[] parameters = GetParameters(elements);
-      
+      if(int.TryParse(command, out int choice)) {
+          Item? chosen = context.GetCurrent().FindItem(choice);
+          if(chosen!=null)
+          {
+              if (context.GetCurrent().HaveCompleted) {
+                  Console.WriteLine("No choices left to make here");
+                } else {
+                Console.Clear();
+                context.GetInventory().AddItemToInventory(chosen);
+                Console.WriteLine("You chose " + chosen.Name);
+                
+                context.GetCurrent().Complete();
+                context.IncrementRooms();
+                //Checks if rooms completed is equal to total rooms
+                if (context.RoomsCompleted == Space.TotalRooms) {
+                    //Calls the gamecomplete method
+                    context.GameComplete();
+                }
+              }
+          }
+          else
+          {
+              Console.WriteLine("That is not a option?");
+          }
+      } else {
       switch (command) {
         case "exit":
         case "quit":
@@ -60,40 +84,13 @@ class Game {
               context.GameComplete();
           }
           break;
-        case "choose":
-            //Checks if choice has been made already
-            if (context.GetCurrent().HaveCompleted) {
-                Console.WriteLine("No choices left to make here");
-                break;
-            }
-            if (parameters.Length != 1) {
-                    Console.WriteLine("I don't seem to know what that is 🤔");
-                    break;
-                }
-               
-             Item? chosen = context.GetCurrent().FindItem(parameters[0]);  //loops through all items in the current space and assigns an item if it matches the given parameter
-             
-            if (chosen != null){
-                Console.Clear();
-                context.GetInventory().AddItemToInventory(chosen); //Fetches item to players inventory
-                Console.WriteLine("you chose "+parameters[0]);
-                //Can add WriteLine here with information on choice, based on chosen. 
-                context.GetCurrent().Complete();
-                //Incremeants rooms completed variable when a room is completed
-                context.IncrementRooms();
-                //Checks if rooms completed is equal to total rooms
-                if (context.RoomsCompleted == Space.TotalRooms) {
-                    //Calls the gamecomplete method
-                    context.GameComplete();
-                }
-                break;
-            } else Console.WriteLine("You cannot choose "+parameters[0]);
-            break;
         default:
           Console.WriteLine("Woopsie, I don't understand '"+command+"' 😕");
           break;
       }
     }
+    }
+
     Console.WriteLine("Game Over 😥");
   }
   

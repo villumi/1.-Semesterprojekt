@@ -3,7 +3,7 @@
     "roomMessage": "You wake up and you are hungry. You go to the fridge where you see last night's leftovers. You don't really want this for breakfast, but is it worth it to just throw it out? You consider making a new meal, but that might mean even more leftovers ending up in the fridge.\n\nUse 'choose leftovers' or 'choose cook' to select a option\nWhat do you do?",
     "items": [
       {
-        "option": "leftovers",
+        "option": "eat leftovers",
         "pointValue": -0.493
       },
       {
