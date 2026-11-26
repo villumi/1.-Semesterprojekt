@@ -6,9 +6,21 @@ class Game {
   static Context  context  = new Context(world.GetEntry());
   
   static void Main (string[] args) {
+    Console.Clear();
     Console.WriteLine("Welcome to the Climate GO-GETTERS!");
-    
-    
+    Console.WriteLine("Here are the commands:");
+    Console.WriteLine(" - exit  Exit the program");
+    Console.WriteLine(" - quit  Exit the program");
+    Console.WriteLine(" - bye   Exit the program");
+    Console.WriteLine(" - go 'room name'  Follow an exit");
+    Console.WriteLine(" - 1,2,3 Choose an option");
+    Console.WriteLine(" - help  Display a help message");
+    Console.WriteLine("");
+    Console.WriteLine("Press Enter to continue");
+    while (true){
+        Console.ReadLine();
+        break;
+    }
     context.GetCurrent().Welcome();
     
     while (context.IsDone()==false) {
@@ -20,7 +32,30 @@ class Game {
       string[] elements = line.Split(" ");
       string command = elements[0];
       string[] parameters = GetParameters(elements);
-      
+      if(int.TryParse(command, out int choice)) {
+          Item? chosen = context.GetCurrent().FindItem(choice);
+          if(chosen!=null)
+          {
+              if (context.GetCurrent().HaveCompleted) {
+                  Console.WriteLine("No choices left to make here");
+                } else {
+                Console.Clear();
+                context.GetInventory().AddItemToInventory(chosen);
+                Console.WriteLine("You chose " + chosen.Name);
+                context.GetCurrent().Complete(chosen);
+                context.IncrementRooms();
+                //Checks if rooms completed is equal to total rooms
+                if (context.RoomsCompleted == Space.TotalRooms) {
+                    //Calls the gamecomplete method
+                    context.GameComplete();
+                }
+              }
+          }
+          else
+          {
+              Console.WriteLine("That is not a option?");
+          }
+      } else {
       switch (command) {
         case "exit":
         case "quit":
@@ -47,6 +82,7 @@ class Game {
           Console.WriteLine(" - quit  Exit the program");
           Console.WriteLine(" - bye   Exit the program");
           Console.WriteLine(" - go    Follow an exit");
+          Console.WriteLine(" - 1,2,3 Choose an option");
           Console.WriteLine(" - help  Display a help message");
           break;
 
@@ -96,6 +132,8 @@ class Game {
           break;
       }
     }
+    }
+
     Console.WriteLine("Game Over 😥");
   }
   

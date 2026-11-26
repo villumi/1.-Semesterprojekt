@@ -44,19 +44,6 @@
       }
     ]
   },
-  "Garage": {
-    "roomMessage": "You trip and fall.\n\nWhat do you do?",
-    "items": [
-      {
-        "option": "up",
-        "pointValue": 0
-      },
-      {
-        "option": "wait",
-        "pointValue": 0
-      }
-    ]
-  },
   "Driveway": {
     "roomMessage": "You need a car to get to work. Your choices are an electric car or a petrol car. On average people emit around 1.5 tons of CO2e a year on private transportation. That is counting both production of the vehicle and running it.\n\nWhat do you buy?",
     "items": [

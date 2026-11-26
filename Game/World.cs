@@ -8,7 +8,6 @@ class World {
     Space room    = new Space("Room");
     Space home = new Space("Home");
     Space garden = new Space("Garden");
-    Space garage = new Space("Garage");
     Space driveway     = new Space("Driveway");
     Space workplace      = new Space("Workplace");
     Space supermarket  = new Space("Supermarket");
@@ -18,12 +17,8 @@ class World {
     home.AddEdge("room", room);
     home.AddEdge("driveway", driveway);
     home.AddEdge("garden", garden);
-    home.AddEdge("garage", garage);
     garden.AddEdge("home", home);
-    garage.AddEdge("home", home);
-    garage.AddEdge("driveway", driveway);
     driveway.AddEdge("home", home);
-    driveway.AddEdge("garage", garage);
     driveway.AddEdge("workplace", workplace);
     driveway.AddEdge("supermarket", supermarket);
     driveway.AddEdge("shopping", shopping);
