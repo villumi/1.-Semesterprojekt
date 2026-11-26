@@ -40,6 +40,7 @@ class Game {
                   Console.WriteLine("No choices left to make here");
                 } else {
                 Console.Clear();
+                chosen.roomName = context.GetCurrent(). GetName();
                 context.GetInventory().AddItemToInventory(chosen);
                 Console.WriteLine("You chose " + chosen.Name);
                 context.GetCurrent().Complete(chosen);
@@ -102,8 +103,8 @@ class Game {
       }
     }
     }
-
-    Console.WriteLine("Game Over 😥");
+    Console.WriteLine("");
+    Console.WriteLine(context.EndingMessage); //EndingMessage is displayed at the end
   }
   
   private static string[] GetParameters (string[] input) {

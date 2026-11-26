@@ -4,6 +4,7 @@
 class Context {
   private Space current;
   private bool done = false;
+  public string EndingMessage{get; private set;} = "Game Over 😥";
   public int RoomsCompleted { get; private set; }
   private Inventory inventory = new Inventory(); 
   
@@ -43,6 +44,7 @@ class Context {
         Console.WriteLine("Your total score is: " + Math.Round(completescore, 1));
         if (completescore<15.5) {
             Console.WriteLine("That means you are a CLIMATE FORERUNNER");
+            EndingMessage = "The Game has been Completed"; //Gives the player the "nice to have" of a different ending message depending on score
         } else if (completescore>20) {
             Console.WriteLine("That means you are an AVERAGE CONSUMER");
         } else {
@@ -57,6 +59,8 @@ class Context {
         Console.WriteLine($"If 50% did as you: {savedTons*0.5:N0} tons CO2e");
         Console.WriteLine($"If 20% did as you: {savedTons*0.20:N0} tons CO2e");
         Console.WriteLine();
+        Console.WriteLine("A recap of the choices made:");
+        inventory.GetItems();
         done = true;
     }
   
