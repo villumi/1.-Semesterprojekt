@@ -1,0 +1,18 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "label": "Debug C# Console App",
+    "adapter": "coreclr",
+    "request": "launch",
+    "program": "${ZED_WORKTREE_ROOT}/bin/Debug/net9.0/cs.dll",
+    "cwd": "${ZED_WORKTREE_ROOT}",
+    "console": "integratedTerminal",
+    "build": {
+      "command": "dotnet",
+      "args": ["build"]
+    }
+  }
+]
