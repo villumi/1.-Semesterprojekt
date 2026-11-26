@@ -41,6 +41,7 @@ class Game {
                   Console.WriteLine("No choices left to make here");
                 } else {
                 Console.Clear();
+                context.PrintStickyNote();
                 context.GetInventory().AddItemToInventory(chosen);
                 Console.WriteLine("You chose " + chosen.Name);
                 context.GetCurrent().Complete(chosen);
