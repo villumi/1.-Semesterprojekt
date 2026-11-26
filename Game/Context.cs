@@ -34,6 +34,7 @@ class Context {
       current.Goodbye();
       current = next;
       current.Welcome();
+      PrintStickyNote();
       }
     }
 
@@ -58,6 +59,50 @@ class Context {
         Console.WriteLine($"If 20% did as you: {savedTons*0.20:N0} tons CO2e");
         Console.WriteLine();
         done = true;
+    }
+
+    public void PrintStickyNote()
+    {
+      string[] items =
+      {
+          "Go to work",
+          "Eat dinner",
+          "Mow the grass",
+          "Go shopping",
+          "Buy groceries"
+      };
+      int previousLeft = Console.CursorLeft;
+      int previousTop = Console.CursorTop;
+      int noteWidth = 25;
+      int left = Math.Max(0, Console.WindowWidth - noteWidth - 2);
+      int top = Math.Max(0, Console.WindowHeight - items.Length - 6);
+
+      string border = "+" + new string('-', noteWidth - 2) + "+";
+
+      Console.SetCursorPosition(left, top);
+      Console.ForegroundColor = ConsoleColor.Yellow;
+      Console.WriteLine(border);
+
+      Console.SetCursorPosition(left, top + 1);
+      Console.WriteLine("|       MY TO-DO LIST   |");
+
+      Console.SetCursorPosition(left, top + 2);
+      Console.WriteLine(border);
+
+      Console.ForegroundColor = ConsoleColor.White;
+
+      for (int i = 0; i < items.Length; i++)
+      {
+          Console.SetCursorPosition(left, top + 3 + i);
+          Console.WriteLine($"| {i + 1}. {items[i],-19}|");
+      }
+
+      Console.ForegroundColor = ConsoleColor.Yellow;
+      Console.SetCursorPosition(left, top + 3 + items.Length);
+      Console.WriteLine(border);
+
+      Console.ResetColor();
+      Console.SetCursorPosition(previousLeft, previousTop);
     }
   
   public void MakeDone () {

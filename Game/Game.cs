@@ -49,6 +49,7 @@ class Game {
           Console.WriteLine(" - go    Follow an exit");
           Console.WriteLine(" - help  Display a help message");
           break;
+
         case "complete": //remove, made to check functionality of completing player choice. 
           Console.WriteLine("Auto completed room");
           context.GetCurrent().Complete();
@@ -75,6 +76,7 @@ class Game {
              
             if (chosen != null){
                 Console.Clear();
+                context.PrintStickyNote();
                 context.GetInventory().AddItemToInventory(chosen); //Fetches item to players inventory
                 Console.WriteLine("you chose "+parameters[0]);
                 // Completing room 

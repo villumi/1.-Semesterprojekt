@@ -17,6 +17,7 @@
     public IReadOnlyCollection<Item> Items => items;
     private string roomMessage;
     public static int TotalRooms { get; private set; }
+
     public Space (string name) : base(name)
     {
         TotalRooms++;
