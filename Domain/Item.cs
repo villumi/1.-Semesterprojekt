@@ -2,6 +2,7 @@
 */
 public class Item {
     public string name;
+    public string roomName = ""; //Gives each item, its own name in relation to room
     private double pointValue; 
     private string itemMessage;
 

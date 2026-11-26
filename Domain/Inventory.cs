@@ -17,7 +17,11 @@ public class Inventory {
    //prints every item in the list
    public void GetItems() {
        foreach (Item item in this.items) {
-           Console.WriteLine(item.Name);
+           string line = item.roomName + ": " + item.Name; //Connects the "item" to room so the player is aware of where they made the choice
+           if(item.PointValue < 0) {
+               line += "(saved " + (-item.PointValue) + " kg C02e)";
+           }
+           Console.WriteLine(line); //Prints the choices which the player has made that makes a positive difference in CO2 emissions
        }
    }
    
