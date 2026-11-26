@@ -22,6 +22,7 @@ class Game {
         break;
     }
     context.GetCurrent().Welcome();
+    context.PrintStickyNote();
     
     while (context.IsDone()==false) {
       Console.Write("> ");
