@@ -2,6 +2,7 @@
 */
 public class Item {
     public string name;
+    public string roomName = ""; //Saves choice by room
     private double pointValue; 
     private string itemMessage;
 

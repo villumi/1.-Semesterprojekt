@@ -58,6 +58,9 @@ class Context {
         Console.WriteLine($"If 50% did as you: {savedTons*0.5:N0} tons CO2e");
         Console.WriteLine($"If 20% did as you: {savedTons*0.20:N0} tons CO2e");
         Console.WriteLine();
+        Console.WriteLine("A recap of your descisions:");
+        inventory.GetItems();
+        Console.WriteLine();
         done = true;
     }
 

@@ -42,6 +42,7 @@ class Game {
                 } else {
                 Console.Clear();
                 context.PrintStickyNote();
+                chosen.roomName = context.GetCurrent().GetName();
                 context.GetInventory().AddItemToInventory(chosen);
                 Console.WriteLine("You chose " + chosen.Name);
                 context.GetCurrent().Complete(chosen);

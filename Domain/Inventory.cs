@@ -17,7 +17,11 @@ public class Inventory {
    //prints every item in the list
    public void GetItems() {
        foreach (Item item in this.items) {
-           Console.WriteLine(item.Name);
+           string line = item.roomName + " : " + item.Name;
+           if (item.PointValue < 0) {
+               line += " (saved " + (-item.PointValue) + " kg C02e)";
+           }
+        Console.WriteLine(line);
        }
    }
    
